@@ -1,0 +1,21 @@
+<mvc:View controllerName="demo.controller.MainView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:s="custom.map">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<s:LeafletMap id="map" width="100%" height="600px" defaultZoomLevel="5" autoZoom="true" autoPanToSelectedAreas="true"
+							drawOpenStreetMap="true" drawGeoJsonMap="false" permanentTooltips="true" geoJsonHighlights="{highlights>/HighlightsCollection}"
+							highlightColor="#ff7800" geoJsonUrl="./custom/map/level3.geojson" geoJsonPropertyKey="LEVEL3_COD" templateUrl="{i18n>templateUrl}"
+							attribution="{i18n>attribution}"/>
+						<!--geoJsonHighlights="FRA,POR"-->
+						<Input id="inpArea" value="FRA" width="15rem"/>
+						<Button press="onAddAreas" text="Highlight Area(s), separate by comma"/>
+						<Button press="onDrawGeoJson" text="Draw Complete GeoJson Map"/>
+						<Button press="onSwitchHighlights" text="Switch sample Areas"/>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
