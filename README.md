@@ -51,7 +51,7 @@ Just clone or unzip, open in SAP UI5 Web IDE (cloud or personal edition) and exe
     <!--...-->
   </mvc:View>
 ```
-and/or controller
+... and/or controller...
 ```Javascript
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
@@ -60,6 +60,27 @@ sap.ui.define([
 	"use strict";
 	// ...
 ```
+
+## API Reference
+### Properties
+|Name | Type | Default Value | Description
+| ------------ | ------------ | ------------ | ------------ |
+|width | [sap.ui.core.CSSSize](https://openui5.hana.ondemand.com/#/api/sap.ui.core.CSSSize) | 800px | Defines the map width.|
+|height | [sap.ui.core.CSSSize](https://openui5.hana.ondemand.com/#/api/sap.ui.core.CSSSize) | 500px | Defines the map height.|
+|geoJsonHighlights | string[] | | Defines the codes of the areas to be highlighted as an array of strings. In case of only one area to be highlighted, a string works out as well.|
+|highlightColor | [sap.ui.core.CSSColor](https://openui5.hana.ondemand.com/api/sap.ui.core.CSSColor) | #ff7800 | Defines the highlighted areas' overlay color.|
+|permanentTooltips | boolean | true | Defines whether to permanently display the highlighted areas' tooltips showing their area names.|
+|drawOpenStreetMap | boolean | true | Defines whether to draw an OSM map as background layer.|
+|drawGeoJsonMap | boolean | false | Defines whether to draw the entire geoJson map as background layer.|
+|defaultZoomLevel | int | 4 | Defines the default map's zoom level.|
+|autoZoom | boolean | true | Defines whether to ignore the default zoom level and zoom up if the default zoom level would prohibit the map from displaying all highlighted areas. This property is ignored if autoPanToSelectedAreas is set to false.|
+|autoPanToSelectedAreas | boolean | true | Defines whether to automatically pan to highlighted areas.|
+|geoJsonUrl | [sap.ui.core.URI](https://openui5.hana.ondemand.com/api/sap.ui.core.URI) | <sub>./custom/map/level3.geojson</sub> | URI of file  containing the GeoJson map to be displayed either entirely or only it's highlights.|
+|geoJsonPropertyKey | string | LEVEL3_COD | Properties key in the GeoJson file's features aggregation used as key to identify areas to be highlighted.|
+|templateUrl | [sap.ui.core.URI](https://openui5.hana.ondemand.com/api/sap.ui.core.URI) | <sub>https://{s}.tile.openstreet map.org/{z}/{x}/{y}.png</sub> | Defines the Leaflet title layer template URL. See [Leaflet reference](https://leafletjs.com/reference-1.6.0.html) for instructions on how to leverage additional map providers like mapbox. As special characters in XML views lead to problems, set this property programatically or via i18n file.|
+|attribution | string | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Defines the map's attribution pane text. As special characters in XML views lead to problems, set this property programatically or via i18n file.|
+
+See [sap.ui.core.Control in UI5 Reference](https://openui5.hana.ondemand.com/api/sap.ui.core.Control) for properties, aggregations, events, and methods derived from sap.ui.core.Control.
 
 ## References
 * [Leaflet](https://github.com/Leaflet/Leaflet) - JavaScript library for mobile-friendly interactive maps
